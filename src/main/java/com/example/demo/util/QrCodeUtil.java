@@ -24,6 +24,7 @@ import java.util.Map;
 public class QrCodeUtil{
 
     private Map<String, String> urlMap = new HashMap<>();
+    private final String folderName = "qrcodePics";
 
     public static void main(String[] args) {
         QrCodeUtil test = new QrCodeUtil();
@@ -35,7 +36,7 @@ public class QrCodeUtil{
         urlMap = Constants.getIosMap();
 
         urlMap.forEach((k, v) -> {
-            File outputfile = this.createFileWithDirectory("qrcodePics", k + ".jpg");
+            File outputfile = this.createFileWithDirectory(folderName, k + ".jpg");
             try {
                 ImageIO.write(toQrCode(v), "jpg", outputfile);
             } catch (IOException e) {
@@ -48,7 +49,7 @@ public class QrCodeUtil{
         urlMap = Constants.getAndroidMap();
 
         urlMap.forEach((k, v) -> {
-            File outputfile = this.createFileWithDirectory("qrcodePics", k + ".jpg");
+            File outputfile = this.createFileWithDirectory(folderName, k + ".jpg");
             try {
                 ImageIO.write(toQrCode(v), "jpg", outputfile);
             } catch (IOException e) {
