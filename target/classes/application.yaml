@@ -1,0 +1,23 @@
+server:
+  port: 8085
+  servlet:
+    contextPath: /api/v1
+
+spring:
+  application:
+    name: spring-gen-qrcode
+
+#config use in core-common-framework
+app:
+  config:
+    messageBasenames: classpath:messages
+    messages:
+      cacheMillis: 500
+  swagger:
+    enable: true
+    title: Spring-gen-qrcode service
+    basepackage: com.example.demo
+    desc: API for TEST swagger-ui
+    version: v1.0.0
+  statusCode:
+    generalServiceFail: E001
